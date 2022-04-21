@@ -1,12 +1,23 @@
 <?php
     $_DATA = (object) json_decode(file_get_contents("php://input"));
-    if($_DATA->opcion == "iniciarCiclo"){
-        for ($i=$_DATA->inicio; $i < $_DATA->final; $i+=$_DATA->avance) { 
-            echo "ciclo #$i INCREMENTO <br>";
-        }
-    }else if($_DATA->opcion == "iniciarCiclo2"){
-        for ($i=($_DATA->final-1); $i >= $_DATA->inicio; $i-=$_DATA->avance) { 
-            echo "ciclo #$i DECREMENTO <br>";
-        }
+    $lista = (array) [
+        "Miguel",
+        "nombre" => (string) "Juan",
+        "Jose",
+        "Andres",
+        "lista" => (array) ["Carlos"]
+    ];
+    foreach ($lista as $key => $value) {
+        echo("Llave: ");
+        print_r($key);
+        echo ",<br>";
+        echo("Valor: ");
+        print_r($value);
+        echo ",<br>";
     }
+    // for ($i=0; $i < count($lista); $i++) { 
+    //     if(array_key_exists($i, $lista)){
+    //         print_r($lista[$i]);
+    //     }
+    // }
 ?>
